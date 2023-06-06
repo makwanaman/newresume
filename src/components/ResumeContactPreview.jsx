@@ -5,6 +5,7 @@ import TemplateOne from "../view/AllTemplate/index";
 import TemplateFourStru from "../view/AllTemplate/TemplateFourStru";
 import TemplateThreeStru from "../view/AllTemplate/TemplateThreeStru";
 import TemplateTwoStru from "../view/AllTemplate/TemplateTwoStru";
+import ResumeFiveStructure from "../view/TemplateFive/ResumeFiveStructure";
 // import { useTranslation } from "react-i18next";
 const ResumeContactPreview = () => {
   // const {t} = useTranslation()
@@ -14,6 +15,7 @@ const ResumeContactPreview = () => {
   const [preview,setPreview]=useState(false);
   return (
     <>
+    {console.log(templateIdState, "templateIdState")}
       <div className="resume-preview text-right py-5 pl-5 ">
         <div className="resume-zoom pl-3 preview-box">
           {(function () {
@@ -25,6 +27,8 @@ const ResumeContactPreview = () => {
               return <TemplateThreeStru />;
             } else if (templateIdState === "4") {
               return <TemplateFourStru />;
+            }else if (templateIdState === "5") {
+              return <ResumeFiveStructure />;
             }
           })()}
         </div>

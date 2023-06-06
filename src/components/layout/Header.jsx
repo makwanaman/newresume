@@ -22,7 +22,7 @@ const Header = () => {
     setPathname(location.pathname);
   }, [location.pathname]);
   useEffect(() => {
-    localStorage.setItem("i18nextLng", "de");
+    localStorage.setItem("i18nextLng", "en");
     if (
       pathname === "/" ||
       pathname === "/experience-level" ||
