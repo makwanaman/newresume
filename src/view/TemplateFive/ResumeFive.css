@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+
+.container{
+  color: #fff;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.left-side{
+  background:#404040;
+  color: #fff;
+}
+.right-side{
+color: #404040;
+background: #fff;
+}
+
+.resume-img{
+  width: 65%;
+  margin: auto;
+}
+
+.resume-img img{
+  width: 100%;
+  aspect-ratio: 5/7;
+  object-fit: cover;
+}
+
+.competencies{
+  word-wrap: break-word;
+}
+
+.sign p{
+  font-family: 'Dancing Script', cursive;
+}

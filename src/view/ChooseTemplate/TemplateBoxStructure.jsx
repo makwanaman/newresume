@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { changeTemplateId } from "../../redux/features/resumeSlice";
 import { v4 as uuidv4 } from "uuid";
 import { useTranslation } from "react-i18next";
+import ResumeFiveStructure from "../TemplateFive/ResumeFiveStructure";
 // import Temp4 from '../AllTemplate/Temp4';
 const TemplateBoxStructure = () => {
   const {t} = useTranslation()
@@ -32,6 +33,7 @@ const TemplateBoxStructure = () => {
   ] = useState("");
   //Function for getting template id's
   const handleTemplateId = (id) => {
+    console.log(id, "handleTemplateIdddddddddd")
     setTempid(id);
     dispatch(changeTemplateId(id));
   };
@@ -609,6 +611,51 @@ const TemplateBoxStructure = () => {
                 <div onClick={() => handleTemplateId("4")}>
                   <div className="resume-zoom">
                     <TemplateFourStru />
+                    {/* <Temp4/> */}
+                    {/* <TemplateFour /> */}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="col-lg-4 mb-3 cursor-pointer"
+              onMouseOver={() => {
+                setmouseEntr(true);
+                setId(3);
+              }}
+              onMouseLeave={() => setmouseEntr(false)}
+              onClick={() => handleTemplateId("5")}
+            >
+              {ismouseEntr && isId === 3 ? <HandleSelectTemplate /> : ""}
+              <div
+                className={` ${
+                  isActive === "resume-five"
+                    ? "active-resume-btn resume-temp"
+                    : "resume-temp"
+                }`}
+                onClick={() => {
+                  setActive("resume-five");
+                }}
+              >
+                <Link
+                  className="resume-select-btn cursor-pointer"
+                  to={`/resume`}
+                >
+                  <button
+                    onMouseEnter={() => {
+                      if (!localToken) {
+                        localStorage.setItem("resume_token", uuidv4());
+                      }
+                    }}
+                    className="btn site-btn bg-blue text-white"
+                    // disabled={!tempid}
+                  >
+                    {t("Choose Template")}
+                  </button>
+                </Link>
+                <div onClick={() => handleTemplateId("5")}>
+                  <div className="resume-zoom">
+                    <ResumeFiveStructure />
                     {/* <Temp4/> */}
                     {/* <TemplateFour /> */}
                   </div>
